@@ -13,6 +13,6 @@ FROM openjdk:8-jdk-alpine
 
 COPY --from=build opt/app/target/*.jar app.jar
 
-ENV PORT 8080
+ENV PORT 9040
 
 ENTRYPOINT ["java","-jar","-Dserver.port=${PORT}","app.jar"]
