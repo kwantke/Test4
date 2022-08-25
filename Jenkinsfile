@@ -14,8 +14,8 @@ node {
             //build npm
             //sh "sudo npm install"
             //sh "sudo npm run build"
-            //dockerImage = docker.build("springboot-deploy:${env.BUILD_NUMBER}")
-            sh 'docker build -t springboot-deploy:${buildNumber} .'
+            dockerImage = docker.build("springboot-deploy:${env.BUILD_NUMBER}")
+            //sh 'docker build -t springboot-deploy:${buildNumber} .'
         }
         stage('Deploy docker') {
             echo "Docker Image Tag Name: ${dockerImageTag}"
